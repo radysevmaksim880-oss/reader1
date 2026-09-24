@@ -13,4 +13,4 @@ android.api = 31
 android.minapi = 21
 android.sdk = 30
 android.ndk = 23b
-android.accept_sdk_license = caffeinate
+android.accept_sdk_license = True
