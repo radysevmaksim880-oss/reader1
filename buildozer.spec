@@ -2,6 +2,7 @@
 title = Cool Reader
 package.name = coolreader
 package.domain = org.reader
+source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 requirements = python3,kivy
