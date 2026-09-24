@@ -14,9 +14,9 @@ fullscreen = 0
 
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-android.api = 31
+android.api = 33
 android.minapi = 21
-android.sdk = 31
+android.sdk = 33
 android.build_tools_version = 33.0.2
 
 android.ndk = 25b
@@ -25,6 +25,8 @@ android.ndk_api = 21
 android.accept_sdk_license = True
 android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
+
+# Жестко указываем стабильную версию Python для сборки
 p4a.python_version = 3.10
 
 [buildozer]
