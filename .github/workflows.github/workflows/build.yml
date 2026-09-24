@@ -11,11 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up JDK 11
+    - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
-        java-version: '11'
+        java-version: '17'
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -51,9 +51,15 @@ jobs:
         pip install --upgrade pip
         pip install "cython<3.0.0" buildozer
 
-    - name: Accept Android SDK Licenses & Build
+    - name: Accept Android SDK Licenses & Fix Gradle Permissions
       run: |
         yes | sdkmanager --sdk_root=$HOME/.buildozer/android/platform/android-sdk --licenses || true
+        # Предварительно создаем директорию и задаем права на исполнение gradlew, если она существует
+        mkdir -p .buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/reader
+        chmod +x .buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/reader/gradlew || true
+
+    - name: Build with Buildozer
+      run: |
         buildozer android debug
 
     - name: Upload APK
