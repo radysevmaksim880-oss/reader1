@@ -7,7 +7,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
-requirements = python3,kivy
+requirements = python3==3.11.0,kivy,pyjnius,gtts
 
 orientation = portrait
 fullscreen = 0
@@ -27,7 +27,7 @@ android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
 
 # Жестко указываем стабильную версию Python для сборки
-p4a.python_version = 3.10
+p4a.branch = v2024.01.21
 
 [buildozer]
 log_level = 2
